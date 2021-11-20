@@ -11,6 +11,6 @@ func init() {
 	setAsmOpcodes()
 
 	console := new(Console)
-	console.ReadBuf = make([]byte, 1024)
+	console.ReadBuf = make([]byte, 0, 1024)
 	cpu.console = *console
 }

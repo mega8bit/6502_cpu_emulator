@@ -8,8 +8,8 @@ type Console struct {
 
 func (c *Console) Read() byte {
 	if len(c.ReadBuf) == 0 {
-		n, _ := fmt.Scanln(c.ReadBuf)
-		c.ReadBuf[n+1] = '\n'
+		_, _ = fmt.Scanln(&c.ReadBuf)
+		c.ReadBuf = append(c.ReadBuf, '\n')
 	}
 	result := c.ReadBuf[0]
 	c.ReadBuf = c.ReadBuf[1:]

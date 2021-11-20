@@ -6,6 +6,10 @@ rectangle:
 	ca65 --cpu 6502 rectangle.asm
 	ld65 -C linker.ld --obj rectangle.o -o rom.bin
 
+greetings:
+	ca65 --cpu 6502 greetings.asm
+	ld65 -C linker.ld --obj greetings.o -o rom.bin
+
 clean:
 	rm -rf *.o
 	rm -rf *.bin

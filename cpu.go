@@ -35,6 +35,8 @@ func (c *CPU) Write(address uint16, value byte) {
 		c.console.Write(value)
 		return
 	}
+
+	c.Rom[address%0x8000] = value
 }
 
 func (c *CPU) Reset() {
